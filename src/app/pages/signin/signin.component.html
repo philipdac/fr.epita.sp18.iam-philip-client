@@ -1,0 +1,51 @@
+<mat-card class="login-card">
+
+    <h2 class="mat-h2">IAM Project - Java Fundamental</h2>
+    <p> Please use admin@email.com / Admin1234 for signing into the system</p>
+
+    <p *ngIf="signInError"
+       class="mat-error"> Invalid email or password. Please try again.</p>
+    <p *ngIf="connectionError"
+       class="mat-error"> Can't connect to the server. Please try again or call support.</p>
+
+    <mat-card-content class="mt-md">
+
+        <form class="form-md"
+              autocomplete="none">
+
+            <mat-form-field class="full-width">
+                <input matInput
+                       placeholder="Enter your email address *"
+                       [formControl]="email"
+                       autocomplete="none">
+                <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="email.hasError('required')">
+                    Email is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput
+                       placeholder="Enter your password *"
+                       type="password"
+                       [formControl]="password"
+                       autocomplete="none">
+                <mat-error *ngIf="password.hasError('required')">
+                    Password is required
+                </mat-error>
+            </mat-form-field>
+
+        </form>
+
+    </mat-card-content>
+
+    <mat-card-actions class="mb-md ml-none">
+        <button mat-raised-button
+                (click)="signIn()"
+                aria-label="SignIn">
+            Sign in
+        </button>
+    </mat-card-actions>
+</mat-card>

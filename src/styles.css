@@ -1,0 +1,62 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body { margin: 0; }
+
+.dashboard-card {
+  margin: 16px;
+}
+.fill-space {
+  flex: 1 1 auto;
+}
+.mb-md {
+    margin-bottom: 16px !important;
+}
+.mt-sm {
+    margin-top: 8px !important;
+}
+.mt-md {
+    margin-top: 16px !important;
+}
+.mt-lg {
+    margin-top: 32px !important;
+}
+.ml-none {
+    margin-left: 0px !important;
+}
+.ml-md {
+    margin-left: 16px !important;
+}
+.ml-lg {
+    margin-left: 32px !important;
+}
+.ml-xl {
+    margin-left: 64px !important;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.form-md {
+  min-width: 320px;
+  max-width: 568px;
+  width: 100%;
+}
+.full-width {
+  width: 100%;
+  margin-top: 8px !important;
+}
+.half-width {
+  width: 50%;
+}
+.notify-error {
+  background-color: darkred;
+}
+.notify-error button {
+  color: orange;
+}
+.notify-success {
+  background-color: darkgreen;
+}
+.notify-success button {
+  color: orange;
+}

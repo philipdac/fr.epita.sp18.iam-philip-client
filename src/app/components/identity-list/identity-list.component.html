@@ -1,0 +1,52 @@
+<mat-card class="dashboard-card">
+
+    <h2 class="mat-h2">Identity list</h2>
+
+    <a mat-raised-button
+       routerLink="/identities/new"
+       aria-label="Add identity">
+        Add
+    </a>
+
+    <a mat-raised-button
+       routerLink="/identities/{{selectedRow.uid}}"
+       [disabled]="selectedRow.uid <= 0"
+       class="ml-md"
+       aria-label="Edit identity">
+        Edit
+    </a>
+
+    <button mat-raised-button
+            (click)="deleteIdentity()"
+            [disabled]="selectedRow.uid <=0"
+            class="ml-md"
+            aria-label="Delete identity">
+        Delete
+    </button>
+
+    <mat-form-field class="ml-xl">
+        <input matInput
+               type="text"
+               placeholder="Search by name or email"
+               [(ngModel)]="searchValue">
+        <button mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="searchValue=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button mat-raised-button
+            (click)="searchIdentity()"
+            class="ml-md"
+            aria-label="Search">
+        Search
+    </button>
+
+    <mat-card-content class="dashboard-card-content">
+        <identity-table (eventSelectRow)="eventSelectRow($event)"></identity-table>
+    </mat-card-content>
+
+</mat-card>

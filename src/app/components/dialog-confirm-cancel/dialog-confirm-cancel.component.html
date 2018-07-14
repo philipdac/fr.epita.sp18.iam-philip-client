@@ -1,0 +1,28 @@
+<div class="mb-md">
+    <h2 class="mat-dialog-title">
+        {{title}}</h2>
+
+    <mat-dialog-content style="font-family: Roboto,Helvetica,Arial,sans-serif;">
+        <p>
+            Please confirm to delete the identity:
+        </p>
+        <p>
+            <span style="color: darkred;">{{line1}}</span>
+            <br>{{line2}}</p>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-raised-button
+                (click)="confirm()"
+                aria-label="Confirm">
+            Confirm
+        </button>
+
+        <a mat-raised-button
+           (click)="close()"
+           class="ml-md"
+           aria-label="Close">
+            Close
+        </a>
+    </mat-dialog-actions>
+</div>

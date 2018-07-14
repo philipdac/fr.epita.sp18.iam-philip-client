@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <h1 class="mat-headline">IAM Project - Java Fundamental</h1>
+        <span class="fill-space"></span>
+        <div class="button-row">
+            <a class="ml-md"
+               mat-raised-button
+               routerLink="/identities">
+                <mat-icon>perm_contact_calendar</mat-icon> Identities
+            </a>
+            <a class="ml-md"
+               mat-raised-button
+               routerLink="/document"
+               *ngIf="false">
+                <mat-icon>list</mat-icon> Document
+            </a>
+            <button class="ml-md"
+                    mat-raised-button
+                    aria-label="Logout"
+                    (click)="signOut()">
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
